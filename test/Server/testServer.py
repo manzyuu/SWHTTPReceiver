@@ -3,7 +3,7 @@ import websockets
 import datetime
 
 
-async def echo(websocket, path):
+async def echo(websocket):
     client_ip = websocket.remote_address[0]
     client_port = websocket.remote_address[1]
     print(f"New connection from IPaddr={client_ip}   Port={client_port}")
@@ -15,8 +15,10 @@ async def echo(websocket, path):
         print(f"Connection closed: {client_ip}:{client_port}")
 
 async def main():
-    async with websockets.serve(echo, "localhost", 8765):
-        print("Server started at ws://localhost:8765")
+    address="ws://manzyuu-server.duckdns.org"
+    port=7777
+    async with websockets.serve(echo, "localhost", port):
+        print("Server started at "+address+":"+str(port))
         await asyncio.Future()  # サーバーを実行し続けるためのブロック
 
 if __name__ == "__main__":

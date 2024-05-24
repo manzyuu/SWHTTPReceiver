@@ -1,6 +1,6 @@
 {
     "Websoket": {
-        "URL": "ws://localhost:8765"
+        "URL": "ws://localhost:7777"
     },
     "data": "",
     "path": ""
