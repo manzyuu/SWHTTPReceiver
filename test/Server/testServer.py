@@ -17,7 +17,7 @@ async def echo(websocket):
 async def main():
     address="ws://manzyuu-server.duckdns.org"
     port=7777
-    async with websockets.serve(echo, "localhost", port):
+    async with websockets.serve(echo, "0.0.0.0", port):
         print("Server started at "+address+":"+str(port))
         await asyncio.Future()  # サーバーを実行し続けるためのブロック
 

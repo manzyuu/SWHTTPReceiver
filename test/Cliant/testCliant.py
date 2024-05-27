@@ -37,7 +37,7 @@ def main():
 
         while True:
             calculation.data["time"] = await client.send_and_receive( str(datetime.datetime.now()))
-            #print(f"Response 1: {calculation.data['time']}")
+            print(f"Response 1: {calculation.data['time']}")
             time.sleep(0.01)
         
         #await client.close()
